@@ -11,7 +11,7 @@
 
     <title>
         
-        About - 博客_记录生活
+        Python记录日志到文件logging的使用 - 博客_记录生活
         
     </title>
 
@@ -75,7 +75,7 @@
                     <span>存档</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -91,6 +91,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
     
 </div>
 
@@ -116,24 +120,40 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content no-indent">
-    <p>斜杠中年一枚</p>
-<p>如需技术交流、生活探讨可以尝试通过下方邮箱联系</p>
-<p>邮箱：<a href="mailto:&#121;&#105;&#110;&#x6c;&#x69;&#97;&#110;&#103;&#49;&#50;&#x30;&#52;&#64;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#x6d;">&#121;&#105;&#110;&#x6c;&#x69;&#97;&#110;&#103;&#49;&#50;&#x30;&#52;&#64;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#x6d;</a></p>
-<hr>
-<p>前几年在GitHub写的博客源文件丢失了，导致不能继续更新了，索性重新开始，用文字记录生活。</p>
-<p align="right">2022年3月17日</p>
 
-<hr>
-<p>日拱一卒无有尽，功不唐捐终入海。</p>
-<p align="right">2022年3月17日</p>
 
-<hr>
-
-    
-    <div id="comment-container">
+<div class="post-container">
+    <div class="post-title">
+        Python记录日志到文件logging的使用
     </div>
-    <div id="lv-container">
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-03-18 10:00:51</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Python" title="Python">Python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置日志</span></span><br><span class="line">logging.basicConfig(level=logging.INFO, filename=<span class="string">&#x27;./api_monitor_log.txt&#x27;</span>, filemode=<span class="string">&#x27;a&#x27;</span>,<span class="built_in">format</span>=<span class="string">&#x27;%(asctime)s - %(levelname)s: %(message)s&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 记录日志</span></span><br><span class="line">logging.error(<span class="string">&#x27;记录错误日志的内容&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
 </div>
 
@@ -175,7 +195,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 

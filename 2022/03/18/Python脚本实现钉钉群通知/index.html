@@ -11,7 +11,7 @@
 
     <title>
         
-        About - 博客_记录生活
+        Python脚本实现钉钉群通知 - 博客_记录生活
         
     </title>
 
@@ -75,7 +75,7 @@
                     <span>存档</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>关于</span>
@@ -91,6 +91,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    
+</div>
     
 </div>
 
@@ -116,24 +120,41 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content no-indent">
-    <p>斜杠中年一枚</p>
-<p>如需技术交流、生活探讨可以尝试通过下方邮箱联系</p>
-<p>邮箱：<a href="mailto:&#121;&#105;&#110;&#x6c;&#x69;&#97;&#110;&#103;&#49;&#50;&#x30;&#52;&#64;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#x6d;">&#121;&#105;&#110;&#x6c;&#x69;&#97;&#110;&#103;&#49;&#50;&#x30;&#52;&#64;&#x31;&#50;&#x36;&#46;&#x63;&#x6f;&#x6d;</a></p>
-<hr>
-<p>前几年在GitHub写的博客源文件丢失了，导致不能继续更新了，索性重新开始，用文字记录生活。</p>
-<p align="right">2022年3月17日</p>
 
-<hr>
-<p>日拱一卒无有尽，功不唐捐终入海。</p>
-<p align="right">2022年3月17日</p>
 
-<hr>
-
-    
-    <div id="comment-container">
+<div class="post-container">
+    <div class="post-title">
+        Python脚本实现钉钉群通知
     </div>
-    <div id="lv-container">
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-03-18 10:02:38</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Python" title="Python">Python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <p>代码中的token需要在钉钉群中添加机器人后获得</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests, json</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_message</span>(<span class="params">content</span>):</span><br><span class="line">    url = <span class="string">&#x27;https://oapi.dingtalk.com/robot/send?access_token=xxx&#x27;</span></span><br><span class="line">    pagrem = &#123;</span><br><span class="line">        <span class="string">&quot;msgtype&quot;</span>: <span class="string">&quot;text&quot;</span>,</span><br><span class="line">        <span class="string">&quot;text&quot;</span>: &#123;</span><br><span class="line">            <span class="string">&quot;content&quot;</span>: <span class="string">&quot;异常：%s &quot;</span> % (content)</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">&quot;at&quot;</span>:&#123;</span><br><span class="line">            <span class="string">&quot;atMobiles&quot;</span>:[</span><br><span class="line">                <span class="string">&quot;xxx&quot;</span>       <span class="comment">#需要填写自己的手机号，钉钉通过手机号@对应人</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;isAtAll&quot;</span>: <span class="literal">False</span>        <span class="comment">#是否@所有人，默认否</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;application/json&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    requests.post(url, data=json.dumps(pagrem), headers=headers)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    send_message(<span class="string">&#x27;异常测试&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
 </div>
 
@@ -175,7 +196,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
